@@ -6,7 +6,7 @@
   <title>Balkin Nutrition | Science Backed. Market Ready.</title>
   <style>
     :root {
-      --header-h: 82px;
+      --header-h: 92px;
       --section-y: 36px;
       --navy: #071A2D;
       --navy-soft: #0E2A43;
@@ -26,7 +26,7 @@
     * { box-sizing: border-box; }
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: var(--header-h);
+      scroll-padding-top: calc(var(--header-h) + 18px);
     }
 
     body {
@@ -67,7 +67,7 @@
     .brand-lockup {
       display: inline-flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
       text-decoration: none;
       color: var(--navy);
     }
@@ -80,14 +80,14 @@
     }
 
     .wordmark strong {
-      font-size: 1.03rem;
-      font-weight: 800;
+      font-size: 1.22rem;
+      font-weight: 840;
     }
 
     .wordmark span {
-      margin-top: 6px;
-      font-size: 0.68rem;
-      font-weight: 760;
+      margin-top: 7px;
+      font-size: 0.76rem;
+      font-weight: 800;
       letter-spacing: 0.18em;
       color: var(--teal-deep);
       text-transform: uppercase;
@@ -360,12 +360,18 @@
     }
 
     section {
-      min-height: calc(100svh - var(--header-h));
-      padding: var(--section-y) 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      scroll-margin-top: var(--header-h);
+      min-height: auto;
+      padding: 56px 0;
+      display: block;
+      scroll-margin-top: calc(var(--header-h) + 18px);
+    }
+
+    #services-title,
+    #founder-title,
+    #process-title,
+    #testimonial-title,
+    #contact-title {
+      scroll-margin-top: calc(var(--header-h) + 18px);
     }
 
     .section-head {
@@ -858,7 +864,35 @@
       width: 48px;
       height: 48px;
       flex: 0 0 auto;
+      overflow: hidden;
+      display: block;
     }
+
+    .nav .mark-small {
+      width: 62px;
+      height: 62px;
+    }
+
+    .nav-logo-line {
+      stroke-dasharray: 220;
+      stroke-dashoffset: 220;
+      animation: drawLine 1.15s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .nav-logo-line.delay-1 { animation-delay: 0.12s; }
+    .nav-logo-line.delay-2 { animation-delay: 0.24s; }
+    .nav-logo-line.delay-3 { animation-delay: 0.36s; }
+
+    .nav-logo-node {
+      opacity: 0;
+      transform-origin: center;
+      animation: nodeIn 420ms ease forwards;
+    }
+
+    .nav-logo-node.delay-1 { animation-delay: 0.08s; }
+    .nav-logo-node.delay-2 { animation-delay: 0.26s; }
+    .nav-logo-node.delay-3 { animation-delay: 0.44s; }
+    .nav-logo-node.delay-4 { animation-delay: 0.62s; }
 
     @media (max-width: 1180px) {
       .hero {
@@ -900,15 +934,25 @@
 
     @media (max-width: 720px) {
       :root {
-        --header-h: 74px;
+        --header-h: 78px;
         --section-y: 28px;
       }
 
       .nav { height: var(--header-h); }
+      .nav .mark-small {
+        width: 54px;
+        height: 54px;
+      }
+      .wordmark strong {
+        font-size: 1.05rem;
+      }
+      .wordmark span {
+        font-size: 0.66rem;
+      }
       .nav-links { display: none; }
       main, .nav, footer { width: min(100% - 28px, 1180px); }
       h1 { font-size: clamp(3rem, 18vw, 5rem); }
-      section { padding: var(--section-y) 0; }
+      section { padding: 34px 0; }
       .section-head { display: block; }
       .section-head p { margin-top: 18px; }
       .proof-strip,
@@ -940,13 +984,16 @@
     <header>
       <nav class="nav" aria-label="Main navigation">
         <a class="brand-lockup" href="#top" aria-label="Balkin Nutrition home">
-          <svg class="mark-small" viewBox="0 0 120 120" role="img" aria-label="Balkin Nutrition geometric B mark">
+          <svg class="mark-small" viewBox="0 0 120 120" role="img" aria-label="Animated Balkin Nutrition geometric B mark">
             <rect width="120" height="120" rx="30" fill="#071A2D" />
-            <path d="M38 24 L38 116 M38 24 H68 C84 24 94 34 94 48 C94 62 84 72 68 72 H38 M38 72 H72 C88 72 98 82 98 96 C98 110 88 116 72 116 H38" fill="none" stroke="#EFF5F3" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M68 24 L94 48 L68 72 M72 72 L98 96 L72 116" fill="none" stroke="rgba(61,167,162,0.58)" stroke-width="2.7" stroke-linecap="round" />
-            <circle cx="38" cy="24" r="5" fill="#3DA7A2" />
-            <circle cx="94" cy="48" r="5" fill="#3DA7A2" />
-            <circle cx="98" cy="96" r="5" fill="#3DA7A2" />
+            <path class="nav-logo-line" d="M35 20 L35 112" fill="none" stroke="#EFF5F3" stroke-width="8.5" stroke-linecap="round" />
+            <path class="nav-logo-line delay-1" d="M35 20 H64 C82 20 93 31 93 46 C93 61 82 72 64 72 H35" fill="none" stroke="#EFF5F3" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path class="nav-logo-line delay-2" d="M35 72 H68 C86 72 97 83 97 98 C97 112 86 112 68 112 H35" fill="none" stroke="#EFF5F3" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path class="nav-logo-line delay-3" d="M64 20 L93 46 L64 72 M68 72 L97 98 L68 112" fill="none" stroke="rgba(61,167,162,0.58)" stroke-width="2.5" stroke-linecap="round" />
+            <circle class="nav-logo-node delay-1" cx="35" cy="20" r="4.5" fill="#3DA7A2" />
+            <circle class="nav-logo-node delay-2" cx="93" cy="46" r="4.5" fill="#3DA7A2" />
+            <circle class="nav-logo-node delay-3" cx="64" cy="72" r="3.8" fill="#EFF5F3" />
+            <circle class="nav-logo-node delay-4" cx="97" cy="98" r="4.5" fill="#3DA7A2" />
           </svg>
           <span class="wordmark">
             <strong>Balkin Nutrition</strong>
@@ -954,11 +1001,11 @@
           </span>
         </a>
         <div class="nav-links" aria-label="Section links">
-          <a href="#services">Services</a>
-          <a href="#founder">Founder</a>
-          <a href="#process">Approach</a>
-          <a href="#testimonials">Testimonials</a>
-          <a class="nav-cta" href="#contact">Book a Call</a>
+          <a href="#services-title">Services</a>
+          <a href="#founder-title">Founder</a>
+          <a href="#process-title">Approach</a>
+          <a href="#testimonial-title">Testimonials</a>
+          <a class="nav-cta" href="#contact-title">Book a Call</a>
         </div>
       </nav>
     </header>
@@ -970,8 +1017,8 @@
           <h1 id="hero-title">Science Backed. Market Ready.</h1>
           <p class="lead">Expert nutritional consultancy for functional food, beverage and supplement brands. From initial concept to successful launch, Balkin Nutrition brings together bespoke product formulation, global ingredient sourcing and international regulatory strategy.</p>
           <div class="hero-actions">
-            <a class="button primary" href="#contact">Book a Call</a>
-            <a class="button secondary" href="#services">Explore Services</a>
+            <a class="button primary" href="#contact-title">Book a Call</a>
+            <a class="button secondary" href="#services-title">Explore Services</a>
           </div>
           <div class="proof-strip" aria-label="Company proof points">
             <div class="proof-card">
@@ -1268,10 +1315,10 @@
         <a class="brand-lockup" href="#top" aria-label="Balkin Nutrition home">
           <svg class="mark-small" viewBox="0 0 120 120" aria-hidden="true">
             <rect width="120" height="120" rx="30" fill="#071A2D" />
-            <path d="M38 24 L38 116 M38 24 H68 C84 24 94 34 94 48 C94 62 84 72 68 72 H38 M38 72 H72 C88 72 98 82 98 96 C98 110 88 116 72 116 H38" fill="none" stroke="#EFF5F3" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
-            <circle cx="38" cy="24" r="5" fill="#3DA7A2" />
-            <circle cx="94" cy="48" r="5" fill="#3DA7A2" />
-            <circle cx="98" cy="96" r="5" fill="#3DA7A2" />
+            <path d="M35 20 L35 106 M35 20 H64 C82 20 93 31 93 46 C93 61 82 72 64 72 H35 M35 72 H68 C86 72 97 83 97 98 C97 112 86 112 68 112 H35" fill="none" stroke="#EFF5F3" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="35" cy="20" r="4.5" fill="#3DA7A2" />
+            <circle cx="93" cy="46" r="4.5" fill="#3DA7A2" />
+            <circle cx="97" cy="98" r="4.5" fill="#3DA7A2" />
           </svg>
           <span class="wordmark">
             <strong>Balkin Nutrition</strong>
