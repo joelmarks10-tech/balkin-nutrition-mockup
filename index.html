@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Balkin Nutrition | Science Backed. Market Ready.</title>
+
   <style>
     :root {
       --header-h: 92px;
@@ -24,6 +25,7 @@
     }
 
     * { box-sizing: border-box; }
+
     html {
       scroll-behavior: smooth;
       scroll-padding-top: calc(var(--header-h) + 18px);
@@ -190,6 +192,9 @@
       text-decoration: none;
       font-weight: 780;
       transition: transform 180ms ease, box-shadow 180ms ease;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
     }
 
     .button:hover { transform: translateY(-2px); }
@@ -481,7 +486,7 @@
     }
 
     .founder-card {
-      padding: 18px;
+      padding: 22px;
       border-radius: 36px;
       background: var(--navy);
       color: var(--white);
@@ -504,7 +509,42 @@
       background: rgba(61, 167, 162, 0.22);
     }
 
-    .founder-card > * { position: relative; z-index: 1; }
+    .founder-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .founder-content {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .founder-copy {
+      min-width: 0;
+    }
+
+    .founder-image-wrap {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      padding: 6px;
+      background: linear-gradient(135deg, var(--teal), var(--navy-soft));
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+      flex-shrink: 0;
+    }
+
+    .founder-image {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      border: 4px solid var(--white);
+      background: var(--white);
+    }
 
     .founder-card h2 {
       margin: 12px 0 12px;
@@ -519,7 +559,7 @@
       line-height: 1.65;
     }
 
-    .founder-title {
+    .founder-card .founder-title {
       color: var(--teal);
       font-weight: 800;
       letter-spacing: 0.03em;
@@ -932,6 +972,20 @@
       }
     }
 
+    @media (max-width: 760px) {
+      .founder-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .founder-image-wrap {
+        margin: 0 auto 20px;
+        width: 150px;
+        height: 150px;
+        order: -1;
+      }
+    }
+
     @media (max-width: 720px) {
       :root {
         --header-h: 78px;
@@ -939,22 +993,42 @@
       }
 
       .nav { height: var(--header-h); }
+
       .nav .mark-small {
         width: 54px;
         height: 54px;
       }
+
       .wordmark strong {
         font-size: 1.05rem;
       }
+
       .wordmark span {
         font-size: 0.66rem;
       }
+
       .nav-links { display: none; }
-      main, .nav, footer { width: min(100% - 28px, 1180px); }
-      h1 { font-size: clamp(3rem, 18vw, 5rem); }
-      section { padding: 34px 0; }
-      .section-head { display: block; }
-      .section-head p { margin-top: 18px; }
+
+      main, .nav, footer {
+        width: min(100% - 28px, 1180px);
+      }
+
+      h1 {
+        font-size: clamp(3rem, 18vw, 5rem);
+      }
+
+      section {
+        padding: 34px 0;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 18px;
+      }
+
       .proof-strip,
       .services,
       .testimonials,
@@ -965,9 +1039,18 @@
       .footer-card {
         grid-template-columns: 1fr;
       }
-      .brand-panel { min-height: 430px; }
-      .panel-inner { min-height: 390px; }
-      .footer-links { justify-content: flex-start; }
+
+      .brand-panel {
+        min-height: 430px;
+      }
+
+      .panel-inner {
+        min-height: 390px;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -979,6 +1062,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="page">
     <header>
@@ -995,11 +1079,13 @@
             <circle class="nav-logo-node delay-3" cx="64" cy="72" r="3.8" fill="#EFF5F3" />
             <circle class="nav-logo-node delay-4" cx="97" cy="98" r="4.5" fill="#3DA7A2" />
           </svg>
+
           <span class="wordmark">
             <strong>Balkin Nutrition</strong>
             <span>Science to shelf</span>
           </span>
         </a>
+
         <div class="nav-links" aria-label="Section links">
           <a href="#services-title">Services</a>
           <a href="#founder-title">Founder</a>
@@ -1015,11 +1101,16 @@
         <div>
           <div class="eyebrow">AfN registered nutritional consultancy</div>
           <h1 id="hero-title">Science Backed. Market Ready.</h1>
-          <p class="lead">Expert nutritional consultancy for functional food, beverage and supplement brands. From initial concept to successful launch, Balkin Nutrition brings together bespoke product formulation, global ingredient sourcing and international regulatory strategy.</p>
+
+          <p class="lead">
+            Expert nutritional consultancy for functional food, beverage and supplement brands. From initial concept to successful launch, Balkin Nutrition brings together bespoke product formulation, global ingredient sourcing and international regulatory strategy.
+          </p>
+
           <div class="hero-actions">
             <a class="button primary" href="#contact-title">Book a Call</a>
             <a class="button secondary" href="#services-title">Explore Services</a>
           </div>
+
           <div class="proof-strip" aria-label="Company proof points">
             <div class="proof-card">
               <strong>9+</strong>
@@ -1046,6 +1137,7 @@
                     <stop offset="100%" stop-color="#3DA7A2" />
                   </linearGradient>
                 </defs>
+
                 <g transform="translate(90 30)">
                   <path class="animated-line" d="M120 40 L120 458" fill="none" stroke="url(#lineGradient)" stroke-width="22" stroke-linecap="round" />
                   <path class="animated-line delay-1" d="M120 40 H266 C340 40 390 88 390 154 C390 220 340 260 266 260 H120" fill="none" stroke="url(#lineGradient)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" />
@@ -1059,12 +1151,14 @@
                   <circle class="node delay-5" cx="424" cy="372" r="13" fill="#3DA7A2" />
                   <circle class="node delay-6" cx="286" cy="458" r="10" fill="#EFF5F3" />
                 </g>
+
                 <g class="logo-word-reveal" transform="translate(70 490)">
                   <text x="0" y="0" fill="#EFF5F3" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" letter-spacing="-1.5">Balkin Nutrition</text>
                   <text x="2" y="34" fill="#3DA7A2" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800" letter-spacing="6">SCIENCE TO SHELF</text>
                 </g>
               </svg>
             </div>
+
             <div class="panel-meta">
               <div class="meta-card">
                 <span>Positioning</span>
@@ -1082,7 +1176,6 @@
       <section id="services" aria-labelledby="services-title">
         <div class="section-head">
           <h2 id="services-title">Comprehensive solutions for complex nutritional challenges.</h2>
-          
         </div>
 
         <div class="services">
@@ -1138,13 +1231,27 @@
 
       <section id="founder" aria-labelledby="founder-title">
         <div class="story-grid">
-          <article class="founder-card">
-            <div>
-              <div class="eyebrow">Meet the Founder</div>
-              <h2 id="founder-title">Matthew Balkin</h2>
-              <p class="founder-title">RNutr | Founder & Principal Consultant</p>
-              <p style="margin-top: 20px;">Matthew brings over nine years of hands on experience across the full product lifecycle, from high efficacy formulation and complex multi market regulation to ingredient supply chains that genuinely support the claims on the label.</p>
+          <article class="founder-card" aria-labelledby="founder-title">
+            <div class="founder-content">
+              <div class="founder-copy">
+                <div class="eyebrow">Meet the Founder</div>
+                <h2 id="founder-title">Matthew Balkin</h2>
+                <p class="founder-title">RNutr | Founder & Principal Consultant</p>
+
+                <p style="margin-top: 20px;">
+                  Matthew brings over nine years of hands on experience across the full product lifecycle, from high efficacy formulation and complex multi market regulation to ingredient supply chains that genuinely support the claims on the label.
+                </p>
+              </div>
+
+              <div class="founder-image-wrap">
+                <img 
+                  src="matthew_balkin.png" 
+                  alt="Matthew Balkin, Founder of Balkin Nutrition" 
+                  class="founder-image"
+                />
+              </div>
             </div>
+
             <div class="stat-row">
               <div class="stat">
                 <strong>9+</strong>
@@ -1166,14 +1273,17 @@
               <h3>Evidence Based</h3>
               <p>Every product is grounded in knowledge, experience and careful consideration, with a practical approach for real world use.</p>
             </article>
+
             <article class="value-card">
               <h3>Transparent</h3>
               <p>Clear guidance on timelines, feasibility and trade offs, so clients can make confident decisions without surprises.</p>
             </article>
+
             <article class="value-card">
               <h3>Precision</h3>
               <p>From formulation and compliance to performance and scalability, the details are treated as the difference between idea and launch.</p>
             </article>
+
             <article class="value-card">
               <h3>Long Term</h3>
               <p>The role is not simply to develop one product, but to stay involved as brands grow, adapt and evolve.</p>
@@ -1185,7 +1295,6 @@
       <section id="process" aria-labelledby="process-title">
         <div class="section-head">
           <h2 id="process-title">A clear pathway from concept to shelf.</h2>
-          
         </div>
 
         <div class="process-wrap">
@@ -1196,18 +1305,21 @@
                 <p>Define the product format, target consumer, functional outcome, claims ambition and commercial constraints before development gathers speed.</p>
               </div>
             </div>
+
             <div class="process-step">
               <div>
                 <h3>Engineer the formulation</h3>
                 <p>Build an evidence based formula that considers dosage, clinical relevance, bioavailability, solubility, ingredient interactions and manufacturing feasibility.</p>
               </div>
             </div>
+
             <div class="process-step">
               <div>
                 <h3>Design for compliance</h3>
                 <p>Align formulation, labels and claims with the correct market specific regulatory pathway from the start, not once the packaging is already printed. Radical, apparently.</p>
               </div>
             </div>
+
             <div class="process-step">
               <div>
                 <h3>Secure the supply chain</h3>
@@ -1219,6 +1331,7 @@
           <aside class="dark-card">
             <h3>Responsible consultancy, built in.</h3>
             <p>Balkin Nutrition’s mission is to support the growth of safe, effective and responsible food and supplement brands, while considering the wider impact on people, communities and the environment.</p>
+
             <ul class="mini-list">
               <li>Integrity and honest evidence based guidance</li>
               <li>Accountability for quality and impact</li>
@@ -1233,7 +1346,6 @@
       <section id="testimonials" aria-labelledby="testimonial-title">
         <div class="section-head">
           <h2 id="testimonial-title">Trusted by people building serious nutrition products.</h2>
-          
         </div>
 
         <div class="testimonials">
@@ -1244,6 +1356,7 @@
               <span>Brand Director</span>
             </div>
           </article>
+
           <article class="testimonial-card">
             <p class="quote">Balkin Nutrition kept our project on track, on budget and on time, while still pushing innovation.</p>
             <div class="person">
@@ -1251,6 +1364,7 @@
               <span>Founder, Functional Product Brand</span>
             </div>
           </article>
+
           <article class="testimonial-card">
             <p class="quote">Matti combines deep formulation and regulatory knowledge with brilliant project management from concept to launch.</p>
             <div class="person">
@@ -1266,16 +1380,20 @@
           <div class="contact-card">
             <h2 id="contact-title">Start your product journey.</h2>
             <p>Whether you’re an existing company seeking support or starting a new brand, Balkin Nutrition can help you move from product idea to evidence based, compliant launch.</p>
-            <a class="button secondary" href="#">Schedule a Call</a>
+
+            <a class="button secondary" href="mailto:balkinnutrition@gmail.com">Schedule a Call</a>
+
             <div class="contact-list">
               <div class="contact-item">
                 <span>Email</span>
                 <a href="mailto:balkinnutrition@gmail.com">balkinnutrition@gmail.com</a>
               </div>
+
               <div class="contact-item">
                 <span>Phone</span>
                 <a href="tel:+447972646778">+44 (0) 7972 646778</a>
               </div>
+
               <div class="contact-item">
                 <span>Location</span>
                 <strong>London, UK</strong>
@@ -1289,18 +1407,22 @@
                 <label for="first-name">First Name</label>
                 <input id="first-name" name="first-name" type="text" placeholder="First name" />
               </div>
+
               <div>
                 <label for="last-name">Last Name</label>
                 <input id="last-name" name="last-name" type="text" placeholder="Last name" />
               </div>
+
               <div class="full">
                 <label for="email">Email</label>
                 <input id="email" name="email" type="email" placeholder="you@example.com" />
               </div>
+
               <div class="full">
                 <label for="message">Message</label>
                 <textarea id="message" name="message" placeholder="Tell us about the product, market and challenge you are working on."></textarea>
               </div>
+
               <div class="full">
                 <button class="button primary" type="button">Send Message</button>
               </div>
@@ -1320,11 +1442,13 @@
             <circle cx="93" cy="46" r="4.5" fill="#3DA7A2" />
             <circle cx="97" cy="98" r="4.5" fill="#3DA7A2" />
           </svg>
+
           <span class="wordmark">
             <strong>Balkin Nutrition</strong>
             <span>© 2026</span>
           </span>
         </a>
+
         <div class="footer-links" aria-label="Footer links">
           <a href="#">Privacy Policy</a>
           <a href="#">Cookie Policy</a>
