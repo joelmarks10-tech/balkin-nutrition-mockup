@@ -947,6 +947,127 @@
     .nav-logo-node.delay-3 { animation-delay: 0.44s; }
     .nav-logo-node.delay-4 { animation-delay: 0.62s; }
 
+    /* ── Mobile menu button ─────────────────── */
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 0;
+      border-radius: 12px;
+      color: var(--navy);
+      transition: background 180ms;
+      flex-shrink: 0;
+    }
+
+    .menu-toggle:hover {
+      background: rgba(7, 26, 45, 0.06);
+    }
+
+    .menu-toggle svg {
+      width: 22px;
+      height: 22px;
+      display: block;
+    }
+
+    .hamburger-icon,
+    .close-icon {
+      transition: opacity 180ms;
+    }
+
+    .close-icon {
+      display: none;
+    }
+
+    /* Mobile drawer */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 19;
+      pointer-events: none;
+    }
+
+    .mobile-nav-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(7, 26, 45, 0.45);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      transition: opacity 300ms;
+    }
+
+    .mobile-nav-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(320px, 85vw);
+      background: var(--mist);
+      box-shadow: -20px 0 60px rgba(7, 26, 45, 0.2);
+      transform: translateX(100%);
+      transition: transform 320ms cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      padding: calc(var(--header-h) + 12px) 28px 40px;
+      gap: 8px;
+      overflow-y: auto;
+    }
+
+    .mobile-nav.is-open {
+      pointer-events: auto;
+    }
+
+    .mobile-nav.is-open .mobile-nav-backdrop {
+      opacity: 1;
+    }
+
+    .mobile-nav.is-open .mobile-nav-panel {
+      transform: translateX(0);
+    }
+
+    .mobile-nav-link {
+      display: block;
+      padding: 14px 0;
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 1.15rem;
+      font-weight: 700;
+      border-bottom: 1px solid rgba(7, 26, 45, 0.08);
+      transition: color 180ms;
+    }
+
+    .mobile-nav-link:hover {
+      color: var(--teal-deep);
+    }
+
+    .mobile-nav-cta {
+      margin-top: 20px;
+      border-bottom: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 28px;
+      border-radius: 999px;
+      background: var(--navy);
+      color: var(--white) !important;
+      font-size: 1rem;
+      font-weight: 780;
+      text-decoration: none;
+      text-align: center;
+      transition: transform 180ms, box-shadow 180ms;
+      box-shadow: 0 14px 35px rgba(7, 26, 45, 0.22);
+    }
+
+    .mobile-nav-cta:hover {
+      transform: translateY(-2px);
+    }
+
+    /* ── Large tablet ────────────────────────── */
     @media (max-width: 1180px) {
       .hero {
         grid-template-columns: 1fr 0.9fr;
@@ -970,6 +1091,7 @@
       }
     }
 
+    /* ── Tablet ──────────────────────────────── */
     @media (max-width: 1040px) {
       .hero,
       .process-wrap,
@@ -987,50 +1109,74 @@
       .testimonials {
         grid-template-columns: 1fr 1fr;
       }
+
+      .brand-panel {
+        min-height: 400px;
+      }
+
+      .panel-inner {
+        min-height: 360px;
+      }
     }
 
+    /* ── Founder stacking ────────────────────── */
     @media (max-width: 760px) {
       .founder-profile-card {
-        padding: 28px;
+        padding: 28px 24px;
       }
 
       .founder-profile-top {
         grid-template-columns: 1fr;
-        gap: 26px;
+        gap: 22px;
         text-align: center;
       }
 
       .founder-eyebrow {
-        margin-bottom: 22px;
+        margin-bottom: 18px;
+        justify-content: center;
       }
 
       .founder-photo-frame {
         order: -1;
-        width: 150px;
-        height: 150px;
+        width: 140px;
+        height: 140px;
         margin: 0 auto;
       }
 
       .founder-profile-card h2 {
         white-space: normal;
-        font-size: clamp(2.7rem, 14vw, 4rem);
+        font-size: clamp(2.4rem, 12vw, 3.6rem);
       }
 
       .founder-bio {
         text-align: center;
-        font-size: 1rem;
+        font-size: 0.97rem;
+        margin-top: 20px;
       }
 
-      .founder-stats,
+      .founder-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+
+      .founder-stat {
+        padding: 14px 12px;
+      }
+
+      .founder-stat strong {
+        font-size: 1.35rem;
+      }
+
       .founder-values {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
       }
     }
 
+    /* ── Mobile ──────────────────────────────── */
     @media (max-width: 720px) {
       :root {
-        --header-h: 78px;
-        --section-y: 28px;
+        --header-h: 72px;
+        --section-y: 24px;
       }
 
       .nav {
@@ -1038,8 +1184,8 @@
       }
 
       .nav .mark-small {
-        width: 54px;
-        height: 54px;
+        width: 50px;
+        height: 50px;
       }
 
       .wordmark strong {
@@ -1050,8 +1196,17 @@
         font-size: 0.66rem;
       }
 
+      /* Hide desktop nav links, show hamburger */
       .nav-links {
         display: none;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .mobile-nav {
+        display: block;
       }
 
       main,
@@ -1061,41 +1216,189 @@
       }
 
       h1 {
-        font-size: clamp(3rem, 18vw, 5rem);
+        font-size: clamp(2.8rem, 16vw, 4.5rem);
+        line-height: 1;
+        letter-spacing: -0.055em;
+      }
+
+      .lead {
+        font-size: 1rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .button {
+        width: 100%;
+        max-width: 360px;
+        justify-content: center;
+        min-height: 54px;
       }
 
       section {
-        padding: 34px 0;
+        padding: 32px 0;
       }
 
       .section-head {
         display: block;
+        margin-bottom: 20px;
+      }
+
+      .section-head h2 {
+        font-size: clamp(1.7rem, 7vw, 2.4rem);
       }
 
       .section-head p {
-        margin-top: 18px;
+        margin-top: 14px;
+        font-size: 0.95rem;
       }
 
-      .proof-strip,
+      .proof-strip {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+      .proof-strip .proof-card:last-child {
+        grid-column: 1 / -1;
+      }
+
       .services,
-      .testimonials,
-      .panel-meta,
-      .founder-stats,
-      .form-grid,
-      .footer-card {
+      .testimonials {
         grid-template-columns: 1fr;
       }
 
+      .service-card {
+        grid-template-rows: auto auto auto;
+        padding: 20px;
+      }
+
+      .panel-meta {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
       .brand-panel {
-        min-height: 430px;
+        min-height: 380px;
+        border-radius: 28px;
+        padding: 16px;
       }
 
       .panel-inner {
-        min-height: 390px;
+        min-height: 340px;
+      }
+
+      .hero-logo {
+        width: min(230px, 72%);
+      }
+
+      .founder-stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .founder-values {
+        grid-template-columns: 1fr;
+      }
+
+      .founder-profile-card {
+        padding: 24px 20px;
+      }
+
+      .founder-profile-card h2 {
+        font-size: clamp(2.2rem, 11vw, 3.2rem);
+      }
+
+      .process-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card {
+        border-radius: 28px;
+        padding: 22px 20px;
+      }
+
+      .contact-card h2 {
+        font-size: clamp(1.8rem, 8vw, 2.6rem);
+      }
+
+      .form-card {
+        border-radius: 28px;
+        padding: 20px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-card {
+        grid-template-columns: 1fr;
+        border-radius: 28px;
+        padding: 24px 20px;
+        gap: 20px;
       }
 
       .footer-links {
         justify-content: flex-start;
+        font-size: 0.84rem;
+        gap: 10px 14px;
+      }
+
+      .testimonial-card {
+        padding: 22px 20px;
+        min-height: auto;
+      }
+    }
+
+    /* ── Small mobile ────────────────────────── */
+    @media (max-width: 480px) {
+      :root {
+        --header-h: 68px;
+      }
+
+      .hero {
+        padding: 20px 0 28px;
+      }
+
+      h1 {
+        font-size: clamp(2.6rem, 14vw, 4rem);
+      }
+
+      .proof-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .proof-strip .proof-card:last-child {
+        grid-column: auto;
+      }
+
+      .eyebrow {
+        font-size: 0.72rem;
+        padding: 7px 10px;
+      }
+
+      .button {
+        max-width: 100%;
+      }
+
+      .hero-actions {
+        margin-top: 18px;
+      }
+
+      footer {
+        padding: 28px 0 24px;
+      }
+
+      .dark-card {
+        border-radius: 22px;
+        padding: 18px 16px;
+      }
+
+      .process-map {
+        border-radius: 22px;
+        padding: 14px;
       }
     }
 
@@ -1141,8 +1444,32 @@
           <a href="#testimonial-title">Testimonials</a>
           <a class="nav-cta" href="#contact-title">Book a Call</a>
         </div>
+
+        <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav-panel">
+          <svg class="hamburger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <line x1="3" y1="7" x2="21" y2="7"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="17" x2="21" y2="17"/>
+          </svg>
+          <svg class="close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <line x1="4" y1="4" x2="20" y2="20"/>
+            <line x1="20" y1="4" x2="4" y2="20"/>
+          </svg>
+        </button>
       </nav>
     </header>
+
+    <!-- Mobile navigation drawer -->
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+      <nav class="mobile-nav-panel" id="mobile-nav-panel" aria-label="Mobile navigation">
+        <a class="mobile-nav-link" href="#services-title">Services</a>
+        <a class="mobile-nav-link" href="#founder-title">Founder</a>
+        <a class="mobile-nav-link" href="#process-title">Approach</a>
+        <a class="mobile-nav-link" href="#testimonial-title">Testimonials</a>
+        <a class="mobile-nav-cta" href="#contact-title">Book a Call</a>
+      </nav>
+    </div>
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
@@ -1516,5 +1843,55 @@
       </div>
     </footer>
   </div>
+
+  <script>
+    (function () {
+      var toggle = document.querySelector('.menu-toggle');
+      var mobileNav = document.getElementById('mobile-nav');
+      var backdrop = document.getElementById('mobile-nav-backdrop');
+      var hamburgerIcon = document.querySelector('.hamburger-icon');
+      var closeIcon = document.querySelector('.close-icon');
+      var mobileLinks = document.querySelectorAll('.mobile-nav-link, .mobile-nav-cta');
+
+      function openMenu() {
+        mobileNav.classList.add('is-open');
+        mobileNav.setAttribute('aria-hidden', 'false');
+        toggle.setAttribute('aria-expanded', 'true');
+        hamburgerIcon.style.display = 'none';
+        closeIcon.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        mobileNav.classList.remove('is-open');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        toggle.setAttribute('aria-expanded', 'false');
+        hamburgerIcon.style.display = 'block';
+        closeIcon.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          mobileNav.classList.contains('is-open') ? closeMenu() : openMenu();
+        });
+      }
+
+      if (backdrop) {
+        backdrop.addEventListener('click', closeMenu);
+      }
+
+      mobileLinks.forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) {
+          closeMenu();
+          if (toggle) toggle.focus();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
