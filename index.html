@@ -485,191 +485,154 @@
       background: var(--teal);
     }
 
+    #founder {
+      padding: 28px 0 34px;
+    }
+
     .founder-showcase {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 22px;
-  align-items: stretch;
-}
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: stretch;
+    }
 
-.founder-profile-card {
-  position: relative;
-  overflow: hidden;
-  padding: 42px 46px;
-  border-radius: 34px;
-  background: linear-gradient(145deg, #06182B 0%, #071A2D 55%, #08223D 100%);
-  color: var(--white);
-  box-shadow: var(--shadow);
-}
+    .founder-profile-card {
+      position: relative;
+      overflow: hidden;
+      padding: 34px 38px 32px;
+      border-radius: 34px;
+      background: linear-gradient(145deg, #06182B 0%, #071A2D 55%, #08223D 100%);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
 
-.founder-profile-card::before {
-  display: none;
-}
+    .founder-profile-card::before {
+      display: none;
+    }
 
-.founder-profile-card > * {
-  position: relative;
-  z-index: 1;
-}
+    .founder-profile-card > * {
+      position: relative;
+      z-index: 1;
+    }
 
-.founder-profile-top {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 210px;
-  gap: 42px;
-  align-items: start;
-}
+    .founder-profile-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 180px;
+      gap: 34px;
+      align-items: start;
+    }
 
-.founder-eyebrow {
-  margin-bottom: 38px;
-  background: rgba(255, 255, 255, 0.78);
-  color: var(--teal-deep);
-  box-shadow: 0 12px 30px rgba(7, 26, 45, 0.08);
-}
+    .founder-eyebrow {
+      margin-bottom: 26px;
+      background: rgba(255, 255, 255, 0.78);
+      color: var(--teal-deep);
+      box-shadow: 0 12px 30px rgba(7, 26, 45, 0.08);
+    }
 
-.founder-profile-card h2 {
-  margin: 0;
-  color: var(--white);
-  font-size: clamp(3.2rem, 5vw, 4.8rem);
-  line-height: 0.98;
-  letter-spacing: -0.075em;
-}
+    .founder-profile-card h2 {
+      margin: 0;
+      color: var(--white);
+      font-size: clamp(3rem, 5.4vw, 4.7rem);
+      line-height: 0.95;
+      letter-spacing: -0.075em;
+      white-space: nowrap;
+    }
 
-.founder-role {
-  margin: 18px 0 0;
-  color: var(--teal);
-  font-size: 1.25rem;
-  line-height: 1.35;
-  font-weight: 780;
-}
+    .founder-role {
+      margin: 16px 0 0;
+      color: var(--teal);
+      font-size: 1.15rem;
+      line-height: 1.3;
+      font-weight: 780;
+    }
 
-.founder-photo-frame {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  padding: 5px;
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.25);
-}
+    .founder-photo-frame {
+      width: 175px;
+      height: 175px;
+      border-radius: 50%;
+      padding: 5px;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.25);
+    }
 
-.founder-photo {
-  width: 100%;
-  height: 100%;
-  display: block;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
-  border: 4px solid rgba(255, 255, 255, 0.9);
-  background: linear-gradient(135deg, #d9e4e2, #ffffff);
-}
+    .founder-photo {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      border: 4px solid rgba(255, 255, 255, 0.9);
+      background: linear-gradient(135deg, #d9e4e2, #ffffff);
+    }
 
-.founder-bio {
-  margin: 34px 0 0;
-  max-width: 980px;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 1.08rem;
-  line-height: 1.55;
-}
+    .founder-bio {
+      margin: 28px 0 0;
+      max-width: 980px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 1rem;
+      line-height: 1.48;
+    }
 
-.founder-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  margin-top: 34px;
-}
+    .founder-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
 
-.founder-stat {
-  padding: 20px 22px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
+    .founder-stat {
+      padding: 18px 20px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
 
-.founder-stat strong {
-  display: block;
-  color: var(--white);
-  font-size: 1.8rem;
-  line-height: 1;
-  letter-spacing: -0.04em;
-}
+    .founder-stat strong {
+      display: block;
+      color: var(--white);
+      font-size: 1.65rem;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
 
-.founder-stat span {
-  display: block;
-  margin-top: 10px;
-  color: rgba(255, 255, 255, 0.74);
-  font-size: 0.94rem;
-  line-height: 1.35;
-}
+    .founder-stat span {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 0.9rem;
+      line-height: 1.3;
+    }
 
-.founder-values {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
+    .founder-values {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
 
-.founder-value-card {
-  padding: 24px;
-  min-height: 190px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(7, 26, 45, 0.06);
-  box-shadow: 0 20px 50px rgba(7, 26, 45, 0.06);
-}
+    .founder-value-card {
+      padding: 20px;
+      min-height: 150px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(7, 26, 45, 0.06);
+      box-shadow: 0 20px 50px rgba(7, 26, 45, 0.06);
+    }
 
-.founder-value-card h3 {
-  margin: 0 0 14px;
-  color: var(--navy);
-  font-size: 1.18rem;
-  line-height: 1.15;
-  letter-spacing: -0.035em;
-}
+    .founder-value-card h3 {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-size: 1.1rem;
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+    }
 
-.founder-value-card p {
-  margin: 0;
-  color: rgba(46, 55, 64, 0.78);
-  font-size: 0.96rem;
-  line-height: 1.5;
-}
-
-@media (max-width: 1040px) {
-  .founder-values {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 760px) {
-  .founder-profile-card {
-    padding: 28px;
-  }
-
-  .founder-profile-top {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    text-align: center;
-  }
-
-  .founder-eyebrow {
-    margin-bottom: 26px;
-  }
-
-  .founder-photo-frame {
-    order: -1;
-    width: 160px;
-    height: 160px;
-    margin: 0 auto;
-  }
-
-  .founder-profile-card h2 {
-    font-size: clamp(2.7rem, 14vw, 4rem);
-  }
-
-  .founder-bio {
-    text-align: center;
-    font-size: 1rem;
-  }
-
-  .founder-stats,
-  .founder-values {
-    grid-template-columns: 1fr;
-  }
+    .founder-value-card p {
+      margin: 0;
+      color: rgba(46, 55, 64, 0.78);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
 
     .process-wrap {
       display: grid;
@@ -1001,6 +964,10 @@
       .hero-logo {
         width: min(270px, 76%);
       }
+
+      .founder-values {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     @media (max-width: 1040px) {
@@ -1017,8 +984,7 @@
       }
 
       .services,
-      .testimonials,
-      .founder-values {
+      .testimonials {
         grid-template-columns: 1fr 1fr;
       }
     }
@@ -1030,22 +996,23 @@
 
       .founder-profile-top {
         grid-template-columns: 1fr;
-        gap: 28px;
+        gap: 26px;
         text-align: center;
       }
 
       .founder-eyebrow {
-        margin-bottom: 26px;
+        margin-bottom: 22px;
       }
 
       .founder-photo-frame {
         order: -1;
-        width: 160px;
-        height: 160px;
+        width: 150px;
+        height: 150px;
         margin: 0 auto;
       }
 
       .founder-profile-card h2 {
+        white-space: normal;
         font-size: clamp(2.7rem, 14vw, 4rem);
       }
 
@@ -1320,8 +1287,7 @@
               <div class="founder-profile-copy">
                 <div class="eyebrow founder-eyebrow">Meet the Founder</div>
 
-                <h3 id="founder-title">
-                  Matthew Balkin </h3>
+                <h2 id="founder-title">Matthew Balkin</h2>
 
                 <p class="founder-role">RNutr | Founder & Principal Consultant</p>
               </div>
