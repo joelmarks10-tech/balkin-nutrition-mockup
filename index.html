@@ -6,6 +6,8 @@
   <title>Balkin Nutrition | Science Backed. Market Ready.</title>
   <style>
     :root {
+      --header-h: 82px;
+      --section-y: 36px;
       --navy: #071A2D;
       --navy-soft: #0E2A43;
       --teal: #3DA7A2;
@@ -22,7 +24,10 @@
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--header-h);
+    }
 
     body {
       margin: 0;
@@ -52,7 +57,7 @@
     .nav {
       width: min(1180px, calc(100% - 40px));
       margin: 0 auto;
-      height: 82px;
+      height: var(--header-h);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -117,19 +122,19 @@
     }
 
     .hero {
-      min-height: auto;
+      min-height: calc(100svh - var(--header-h));
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1.02fr 0.98fr;
       align-items: center;
-      gap: 44px;
-      padding: 44px 0 39px;
+      gap: 38px;
+      padding: 26px 0;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 22px;
+      margin-bottom: 16px;
       padding: 8px 12px;
       border: 1px solid rgba(31, 127, 122, 0.25);
       border-radius: 999px;
@@ -153,26 +158,26 @@
     h1 {
       margin: 0;
       color: var(--navy);
-      font-size: clamp(3rem, 5.4vw, 5.9rem);
+      font-size: clamp(3rem, 5vw, 5.25rem);
       line-height: 0.95;
       letter-spacing: -0.075em;
       max-width: 790px;
     }
 
     .lead {
-      margin: 24px 0 0;
-      max-width: 660px;
+      margin: 20px 0 0;
+      max-width: 620px;
       color: rgba(46, 55, 64, 0.78);
-      font-size: clamp(1.03rem, 1.25vw, 1.18rem);
-      line-height: 1.58;
+      font-size: clamp(1rem, 1.12vw, 1.1rem);
+      line-height: 1.5;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 14px;
-      margin-top: 28px;
+      gap: 12px;
+      margin-top: 24px;
     }
 
     .button {
@@ -204,14 +209,14 @@
     .proof-strip {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 28px;
-      max-width: 720px;
+      gap: 10px;
+      margin-top: 22px;
+      max-width: 640px;
     }
 
     .proof-card {
-      padding: 18px;
-      border-radius: 20px;
+      padding: 13px;
+      border-radius: 18px;
       background: rgba(255,255,255,0.72);
       border: 1px solid rgba(7, 26, 45, 0.08);
       box-shadow: 0 18px 45px rgba(7, 26, 45, 0.06);
@@ -220,22 +225,22 @@
     .proof-card strong {
       display: block;
       color: var(--navy);
-      font-size: 1.3rem;
+      font-size: 1.12rem;
       letter-spacing: -0.04em;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .proof-card span {
       color: rgba(46, 55, 64, 0.68);
-      font-size: 0.88rem;
-      line-height: 1.4;
+      font-size: 0.8rem;
+      line-height: 1.28;
     }
 
     .brand-panel {
       position: relative;
-      min-height: 590px;
+      min-height: 480px;
       border-radius: 40px;
-      padding: 28px;
+      padding: 20px;
       background:
         linear-gradient(145deg, rgba(7, 26, 45, 0.98), rgba(14, 42, 67, 0.96)),
         radial-gradient(circle at 20% 20%, rgba(61, 167, 162, 0.22), transparent 20rem);
@@ -272,7 +277,7 @@
     .panel-inner {
       position: relative;
       z-index: 1;
-      min-height: 534px;
+      min-height: 440px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -282,11 +287,11 @@
       display: grid;
       place-items: center;
       flex: 1;
-      padding: 24px 0 34px;
+      padding: 12px 0 18px;
     }
 
     .hero-logo {
-      width: min(370px, 82%);
+      width: min(310px, 78%);
       height: auto;
       overflow: visible;
     }
@@ -328,12 +333,12 @@
     .panel-meta {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 14px;
+      gap: 10px;
     }
 
     .meta-card {
-      padding: 18px;
-      border-radius: 20px;
+      padding: 14px;
+      border-radius: 18px;
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.11);
       backdrop-filter: blur(12px);
@@ -350,11 +355,18 @@
     }
 
     .meta-card strong {
-      font-size: 1rem;
-      line-height: 1.35;
+      font-size: 0.88rem;
+      line-height: 1.28;
     }
 
-    section { padding: 48px 0; }
+    section {
+      min-height: calc(100svh - var(--header-h));
+      padding: var(--section-y) 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      scroll-margin-top: var(--header-h);
+    }
 
     .section-head {
       display: block;
@@ -364,7 +376,7 @@
     .section-head h2 {
       margin: 0;
       color: var(--navy);
-      font-size: clamp(1.9rem, 3.2vw, 3.25rem);
+      font-size: clamp(1.9rem, 3vw, 3rem);
       line-height: 1;
       letter-spacing: -0.055em;
       max-width: 760px;
@@ -467,7 +479,7 @@
       border-radius: 36px;
       background: var(--navy);
       color: var(--white);
-      min-height: 470px;
+      min-height: 420px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -489,8 +501,8 @@
     .founder-card > * { position: relative; z-index: 1; }
 
     .founder-card h2 {
-      margin: 16px 0 16px;
-      font-size: clamp(2rem, 3.2vw, 3.35rem);
+      margin: 12px 0 12px;
+      font-size: clamp(2rem, 3vw, 3rem);
       line-height: 1;
       letter-spacing: -0.06em;
     }
@@ -588,7 +600,7 @@
 
     .process-step {
       display: block;
-      padding: 14px 0;
+      padding: 12px 0;
       border-bottom: 1px solid rgba(7,26,45,0.08);
     }
 
@@ -848,12 +860,36 @@
       flex: 0 0 auto;
     }
 
+    @media (max-width: 1180px) {
+      .hero {
+        grid-template-columns: 1fr 0.9fr;
+        gap: 28px;
+      }
+
+      .brand-panel {
+        min-height: 440px;
+      }
+
+      .panel-inner {
+        min-height: 400px;
+      }
+
+      .hero-logo {
+        width: min(270px, 76%);
+      }
+    }
+
     @media (max-width: 1040px) {
       .hero,
       .story-grid,
       .process-wrap,
       .contact-grid {
         grid-template-columns: 1fr;
+      }
+
+      section,
+      .hero {
+        min-height: auto;
       }
 
       .services,
@@ -863,11 +899,16 @@
     }
 
     @media (max-width: 720px) {
-      .nav { height: 74px; }
+      :root {
+        --header-h: 74px;
+        --section-y: 28px;
+      }
+
+      .nav { height: var(--header-h); }
       .nav-links { display: none; }
       main, .nav, footer { width: min(100% - 28px, 1180px); }
       h1 { font-size: clamp(3rem, 18vw, 5rem); }
-      section { padding: 21px 0; }
+      section { padding: var(--section-y) 0; }
       .section-head { display: block; }
       .section-head p { margin-top: 18px; }
       .proof-strip,
@@ -880,8 +921,8 @@
       .footer-card {
         grid-template-columns: 1fr;
       }
-      .brand-panel { min-height: 510px; }
-      .panel-inner { min-height: 454px; }
+      .brand-panel { min-height: 430px; }
+      .panel-inner { min-height: 390px; }
       .footer-links { justify-content: flex-start; }
     }
 
