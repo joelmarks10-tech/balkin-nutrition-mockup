@@ -315,21 +315,10 @@
       animation: drawLine 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     }
 
-    .animated-line.delay-1 {
-      animation-delay: 0.18s;
-    }
-
-    .animated-line.delay-2 {
-      animation-delay: 0.36s;
-    }
-
-    .animated-line.delay-3 {
-      animation-delay: 0.54s;
-    }
-
-    .animated-line.delay-4 {
-      animation-delay: 0.72s;
-    }
+    .animated-line.delay-1 { animation-delay: 0.18s; }
+    .animated-line.delay-2 { animation-delay: 0.36s; }
+    .animated-line.delay-3 { animation-delay: 0.54s; }
+    .animated-line.delay-4 { animation-delay: 0.72s; }
 
     .node {
       opacity: 0;
@@ -337,29 +326,12 @@
       animation: nodeIn 520ms ease forwards;
     }
 
-    .node.delay-1 {
-      animation-delay: 0.1s;
-    }
-
-    .node.delay-2 {
-      animation-delay: 0.28s;
-    }
-
-    .node.delay-3 {
-      animation-delay: 0.46s;
-    }
-
-    .node.delay-4 {
-      animation-delay: 0.64s;
-    }
-
-    .node.delay-5 {
-      animation-delay: 0.82s;
-    }
-
-    .node.delay-6 {
-      animation-delay: 1s;
-    }
+    .node.delay-1 { animation-delay: 0.1s; }
+    .node.delay-2 { animation-delay: 0.28s; }
+    .node.delay-3 { animation-delay: 0.46s; }
+    .node.delay-4 { animation-delay: 0.64s; }
+    .node.delay-5 { animation-delay: 0.82s; }
+    .node.delay-6 { animation-delay: 1s; }
 
     .logo-word-reveal {
       opacity: 0;
@@ -367,30 +339,9 @@
       animation: wordIn 680ms ease forwards 1.62s;
     }
 
-    @keyframes drawLine {
-      to {
-        stroke-dashoffset: 0;
-      }
-    }
-
-    @keyframes nodeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.55);
-      }
-
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    @keyframes wordIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    @keyframes drawLine { to { stroke-dashoffset: 0; } }
+    @keyframes nodeIn { from { opacity: 0; transform: scale(0.55); } to { opacity: 1; transform: scale(1); } }
+    @keyframes wordIn { to { opacity: 1; transform: translateY(0); } }
 
     .panel-meta {
       display: grid;
@@ -467,7 +418,6 @@
 
     .service-card,
     .card,
-    .value-card,
     .testimonial-card {
       border-radius: var(--radius);
       background: rgba(255, 255, 255, 0.84);
@@ -535,166 +485,157 @@
       background: var(--teal);
     }
 
-    .story-grid {
+    .founder-showcase {
       display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 18px;
-      align-items: start;
+      grid-template-columns: minmax(0, 1.75fr) minmax(340px, 1fr);
+      gap: 28px;
+      align-items: stretch;
     }
 
-    .founder-card {
-      padding: 34px;
-      border-radius: 36px;
-      background: var(--navy);
-      color: var(--white);
-      min-height: auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-shadow: var(--shadow);
+    .founder-profile-card {
       position: relative;
       overflow: hidden;
+      padding: 40px;
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 82% 10%, rgba(61, 167, 162, 0.18), transparent 20rem),
+        linear-gradient(145deg, #06182B 0%, #071A2D 52%, #08223D 100%);
+      color: var(--white);
+      box-shadow: var(--shadow);
     }
 
-    .founder-card::before {
+    .founder-profile-card::before {
       content: "";
       position: absolute;
-      top: -150px;
-      right: -120px;
-      width: 360px;
-      height: 360px;
+      top: -180px;
+      right: -160px;
+      width: 390px;
+      height: 390px;
       border-radius: 50%;
-      background: rgba(61, 167, 162, 0.22);
+      background: rgba(61, 167, 162, 0.16);
     }
 
-    .founder-card > * {
+    .founder-profile-card > * {
       position: relative;
       z-index: 1;
     }
 
-    .founder-image-wrap {
-      position: absolute;
-      top: 34px;
-      right: 34px;
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      padding: 6px;
-      background: linear-gradient(135deg, var(--teal), var(--navy-soft));
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
-      z-index: 3;
+    .founder-profile-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 230px;
+      gap: 42px;
+      align-items: start;
     }
 
-    .founder-image {
+    .founder-eyebrow {
+      margin-bottom: 42px;
+      background: rgba(255, 255, 255, 0.78);
+      color: var(--teal-deep);
+      box-shadow: 0 12px 30px rgba(7, 26, 45, 0.08);
+    }
+
+    .founder-profile-card h2 {
+      margin: 0;
+      color: var(--white);
+      font-size: clamp(3.2rem, 5.2vw, 4.7rem);
+      line-height: 0.98;
+      letter-spacing: -0.075em;
+    }
+
+    .founder-role {
+      margin: 18px 0 0;
+      color: var(--teal);
+      font-size: 1.25rem;
+      line-height: 1.35;
+      font-weight: 780;
+    }
+
+    .founder-photo-frame {
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      padding: 5px;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.25);
+    }
+
+    .founder-photo {
       width: 100%;
       height: 100%;
       display: block;
       border-radius: 50%;
       object-fit: cover;
       object-position: center;
-      border: 4px solid var(--white);
-      background: var(--white);
-    }
-
-    .founder-intro {
-      max-width: calc(100% - 220px);
-    }
-
-    .founder-card .eyebrow {
-      background: rgba(255, 255, 255, 0.76);
-    }
-
-    .founder-card h2 {
-      margin: 12px 0 12px;
-      font-size: clamp(2.5rem, 3.4vw, 3.7rem);
-      line-height: 0.95;
-      letter-spacing: -0.06em;
-      white-space: nowrap;
-    }
-
-    .founder-card p {
-      margin: 0;
-      color: rgba(255, 255, 255, 0.7);
-      line-height: 1.55;
-    }
-
-    .founder-title-text {
-      color: var(--teal) !important;
-      font-weight: 800;
-      letter-spacing: 0.03em;
-      max-width: 100%;
+      border: 4px solid rgba(255, 255, 255, 0.9);
+      background: linear-gradient(135deg, #d9e4e2, #ffffff);
     }
 
     .founder-bio {
-      width: 100%;
-      max-width: none;
-      margin-top: 30px !important;
-      font-size: 1rem;
+      margin: 34px 0 0;
+      max-width: 920px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 1.08rem;
+      line-height: 1.55;
     }
 
-    .stat-row {
+    .founder-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+      gap: 24px;
       margin-top: 34px;
     }
 
-    .stat {
-      padding: 16px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.1);
+    .founder-stat {
+      padding: 20px 22px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
     }
 
-    .stat strong {
+    .founder-stat strong {
       display: block;
-      font-size: 1.5rem;
-      letter-spacing: -0.04em;
       color: var(--white);
+      font-size: 1.8rem;
+      line-height: 1;
+      letter-spacing: -0.04em;
     }
 
-    .stat span {
+    .founder-stat span {
       display: block;
-      margin-top: 5px;
-      color: rgba(255,255,255,0.62);
-      font-size: 0.82rem;
+      margin-top: 10px;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 0.94rem;
       line-height: 1.35;
     }
 
-    .principles {
+    .founder-values {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
       gap: 18px;
-      grid-auto-rows: auto;
     }
 
-    .value-card {
-      padding: 20px;
-      min-height: 170px;
-      height: auto;
-      display: flex;
-      flex-direction: column;
+    .founder-value-card {
+      padding: 28px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(7, 26, 45, 0.06);
+      box-shadow: 0 20px 50px rgba(7, 26, 45, 0.06);
     }
 
-    .value-card span {
-      color: var(--teal-deep);
-      font-size: 0.74rem;
-      font-weight: 840;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .value-card h3 {
-      margin: 0 0 10px;
+    .founder-value-card h3 {
+      margin: 0 0 16px;
       color: var(--navy);
-      font-size: 1.12rem;
-      letter-spacing: -0.03em;
+      font-size: 1.25rem;
+      line-height: 1.15;
+      letter-spacing: -0.035em;
     }
 
-    .value-card p {
+    .founder-value-card p {
       margin: 0;
-      color: rgba(46, 55, 64, 0.72);
-      line-height: 1.5;
+      color: rgba(46, 55, 64, 0.78);
+      font-size: 1rem;
+      line-height: 1.55;
     }
 
     .process-wrap {
@@ -995,17 +936,9 @@
       animation: drawLine 1.15s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     }
 
-    .nav-logo-line.delay-1 {
-      animation-delay: 0.12s;
-    }
-
-    .nav-logo-line.delay-2 {
-      animation-delay: 0.24s;
-    }
-
-    .nav-logo-line.delay-3 {
-      animation-delay: 0.36s;
-    }
+    .nav-logo-line.delay-1 { animation-delay: 0.12s; }
+    .nav-logo-line.delay-2 { animation-delay: 0.24s; }
+    .nav-logo-line.delay-3 { animation-delay: 0.36s; }
 
     .nav-logo-node {
       opacity: 0;
@@ -1013,21 +946,10 @@
       animation: nodeIn 420ms ease forwards;
     }
 
-    .nav-logo-node.delay-1 {
-      animation-delay: 0.08s;
-    }
-
-    .nav-logo-node.delay-2 {
-      animation-delay: 0.26s;
-    }
-
-    .nav-logo-node.delay-3 {
-      animation-delay: 0.44s;
-    }
-
-    .nav-logo-node.delay-4 {
-      animation-delay: 0.62s;
-    }
+    .nav-logo-node.delay-1 { animation-delay: 0.08s; }
+    .nav-logo-node.delay-2 { animation-delay: 0.26s; }
+    .nav-logo-node.delay-3 { animation-delay: 0.44s; }
+    .nav-logo-node.delay-4 { animation-delay: 0.62s; }
 
     @media (max-width: 1180px) {
       .hero {
@@ -1050,9 +972,9 @@
 
     @media (max-width: 1040px) {
       .hero,
-      .story-grid,
       .process-wrap,
-      .contact-grid {
+      .contact-grid,
+      .founder-showcase {
         grid-template-columns: 1fr;
       }
 
@@ -1062,36 +984,45 @@
       }
 
       .services,
-      .testimonials {
+      .testimonials,
+      .founder-values {
         grid-template-columns: 1fr 1fr;
       }
     }
 
     @media (max-width: 760px) {
-      .founder-card {
-        text-align: center;
+      .founder-profile-card {
         padding: 28px;
       }
 
-      .founder-image-wrap {
-        position: relative;
-        top: auto;
-        right: auto;
-        width: 140px;
-        height: 140px;
-        margin: 4px auto 24px;
+      .founder-profile-top {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        text-align: center;
       }
 
-      .founder-intro {
-        max-width: 100%;
+      .founder-eyebrow {
+        margin-bottom: 26px;
       }
 
-      .founder-card h2 {
-        white-space: normal;
-        font-size: clamp(2.4rem, 12vw, 3.4rem);
+      .founder-photo-frame {
+        order: -1;
+        width: 160px;
+        height: 160px;
+        margin: 0 auto;
       }
 
-      .principles {
+      .founder-profile-card h2 {
+        font-size: clamp(2.7rem, 14vw, 4rem);
+      }
+
+      .founder-bio {
+        text-align: center;
+        font-size: 1rem;
+      }
+
+      .founder-stats,
+      .founder-values {
         grid-template-columns: 1fr;
       }
     }
@@ -1148,9 +1079,8 @@
       .proof-strip,
       .services,
       .testimonials,
-      .principles,
       .panel-meta,
-      .stat-row,
+      .founder-stats,
       .form-grid,
       .footer-card {
         grid-template-columns: 1fr;
@@ -1351,61 +1281,68 @@
       </section>
 
       <section id="founder" aria-labelledby="founder-title">
-        <div class="story-grid">
-          <article class="founder-card" aria-labelledby="founder-title">
-            <div class="founder-image-wrap">
-              <img
-                src="matthew_balkin.png"
-                alt="Matthew Balkin, Founder of Balkin Nutrition"
-                class="founder-image"
-              />
-            </div>
+        <div class="founder-showcase">
+          <article class="founder-profile-card" aria-labelledby="founder-title">
+            <div class="founder-profile-top">
+              <div class="founder-profile-copy">
+                <div class="eyebrow founder-eyebrow">Meet the Founder</div>
 
-            <div class="founder-intro">
-              <div class="eyebrow">Meet the Founder</div>
-              <h2 id="founder-title">Matthew Balkin</h2>
-              <p class="founder-title-text">RNutr | Founder & Principal Consultant</p>
+                <h2 id="founder-title">
+                  Matthew<br />
+                  Balkin
+                </h2>
+
+                <p class="founder-role">RNutr | Founder & Principal Consultant</p>
+              </div>
+
+              <div class="founder-photo-frame">
+                <img
+                  src="matthew_balkin.png"
+                  alt="Matthew Balkin, Founder of Balkin Nutrition"
+                  class="founder-photo"
+                />
+              </div>
             </div>
 
             <p class="founder-bio">
               Matthew brings over nine years of hands on experience across the full product lifecycle, from high efficacy formulation and complex multi market regulation to ingredient supply chains that genuinely support the claims on the label.
             </p>
 
-            <div class="stat-row">
-              <div class="stat">
+            <div class="founder-stats">
+              <div class="founder-stat">
                 <strong>9+</strong>
                 <span>Years experience</span>
               </div>
 
-              <div class="stat">
+              <div class="founder-stat">
                 <strong>AfN</strong>
                 <span>Registered</span>
               </div>
 
-              <div class="stat">
+              <div class="founder-stat">
                 <strong>3</strong>
                 <span>Major brand environments</span>
               </div>
             </div>
           </article>
 
-          <div class="principles">
-            <article class="value-card">
+          <div class="founder-values">
+            <article class="founder-value-card">
               <h3>Evidence Based</h3>
               <p>Every product is grounded in knowledge, experience and careful consideration, with a practical approach for real world use.</p>
             </article>
 
-            <article class="value-card">
+            <article class="founder-value-card">
               <h3>Transparent</h3>
               <p>Clear guidance on timelines, feasibility and trade offs, so clients can make confident decisions without surprises.</p>
             </article>
 
-            <article class="value-card">
+            <article class="founder-value-card">
               <h3>Precision</h3>
               <p>From formulation and compliance to performance and scalability, the details are treated as the difference between idea and launch.</p>
             </article>
 
-            <article class="value-card">
+            <article class="founder-value-card">
               <h3>Long Term</h3>
               <p>The role is not simply to develop one product, but to stay involved as brands grow, adapt and evolve.</p>
             </article>
